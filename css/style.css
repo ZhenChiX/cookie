@@ -1,0 +1,28 @@
+/* font-family: 'Permanent Marker', cursive;
+font-family: 'Freckle Face', cursive;
+font-family: 'Parisienne', cursive; */
+
+
+* {
+    font-family: 'Parisienne', cursive;
+  }
+  
+  body {
+    background: #ccc;
+  }
+  
+  table {
+      border:2px solid black;
+  }
+  
+  td {
+      padding: 15px;
+      border-radius: 15px;
+    border: 1px solid black;
+    background: white;
+  }
+  
+  th {
+      background-color: navy;
+      color: white;
+  }
