@@ -137,11 +137,14 @@ pikePlace.render = function () {
     pikePlace.calcCookiesSoldEachHour();
     // grab the parent from the DOM
     var tbEl = document.getElementById('piketable')
+
     for (var i = 0; i < hours.length; i++) {
         // create an element
         var tdEl = document.createElement('td');
+
         // give the element content
-        tdEl.textContent = hours[i] + ': ' + this.cookiesSoldEachHour[i] + ' cookies'
+
+        tdEl.textContent = hours[i] + ': ' + this.cookiesSoldEachHour[i] + ' cookies';
         // append the child to the parent
         tbEl.appendChild(tdEl);
     }

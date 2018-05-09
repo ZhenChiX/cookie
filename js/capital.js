@@ -29,11 +29,11 @@
 
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
-var pikePlace = {
-    name: 'Pike Place Market',
-    minCustomersPerHour: 23,
-    maxCustomersPerHour: 65,
-    avgCookiesPerCustomer: 6.3,
+var capitolHill = {
+    name: 'Capitol Hill',
+    minCustomersPerHour: 20,
+    maxCustomersPerHour: 38,
+    avgCookiesPerCustomer: 2.3,
     customersEachHour: [],
     cookiesSoldEachHour: [],
     totalDailyCookieSales: 0
@@ -41,7 +41,7 @@ var pikePlace = {
 //////////table go in here///////////////////////////////
 
 var allLocations = [];
-var cookiesTable = document.getElementById('piketable');
+var cookiesTable = document.getElementById('capitoltable');
 
 function Locationinfo(location, hours, locationTotal) {
     this.location = location;
@@ -116,15 +116,15 @@ function makeHeaderRow() {
 /////////table go in here ///////////////////////////////////
 
 
-pikePlace.calcCustomersEachHour = function () {
+capitolHill.calcCustomersEachHour = function () {
     for (var i = 0; i < hours.length; i++) {
         //calc a random number between min/max and put it into the array
         this.customersEachHour.push(random(this.minCustomersPerHour, this.maxCustomersPerHour));
     }
 }
 
-pikePlace.calcCookiesSoldEachHour = function () {
-    pikePlace.calcCustomersEachHour();
+capitolHill.calcCookiesSoldEachHour = function () {
+    capitolHill.calcCustomersEachHour();
     // multiply our random customers by the average cookies per
     for (var i = 0; i < hours.length; i++) {
         this.cookiesSoldEachHour.push(Math.ceil(this.customersEachHour[i] * this.avgCookiesPerCustomer));
@@ -133,10 +133,10 @@ pikePlace.calcCookiesSoldEachHour = function () {
     }
 }
 
-pikePlace.render = function () {
-    pikePlace.calcCookiesSoldEachHour();
+capitolHill.render = function () {
+    capitolHill.calcCookiesSoldEachHour();
     // grab the parent from the DOM
-    var tbEl = document.getElementById('piketable')
+    var tbEl = document.getElementById('capitoltable')
     for (var i = 0; i < hours.length; i++) {
         // create an element
         var tdEl = document.createElement('td');
@@ -154,7 +154,7 @@ function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min; // via MDN
 }
 
-// pikePlace.render();
+// capitolHill.render();
 // var ul = document.createElement('list');
 // document.body.appendChild(ul);
 
@@ -183,4 +183,4 @@ makeHeaderRow();
 renderAlllocations();
 
 
-pikePlace.render();
+capitolHill.render();
