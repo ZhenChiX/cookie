@@ -4,9 +4,10 @@ font-family: 'Parisienne', cursive; */
 /* font-family: 'Archivo Black', sans-serif; */
 /* font-family: 'Bangers', cursive; */
 
-.custom {
-  cursor:url("img/cursor.ico"), auto;
+* {
+  cursor:url(img/salmon.png), cell ;
 }
+
 p {
 text-align: left;
 
@@ -67,7 +68,9 @@ transform: scale(1.5);
 * {
     font-family: 'Archivo Black',cursive;
   }
-  
+
+
+
   body {
     background: #ccc;
   }
