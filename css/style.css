@@ -7,7 +7,10 @@ font-family: 'Parisienne', cursive; */
 .custom {
   cursor:url("img/cursor.ico"), auto;
 }
+p {
+text-align: left;
 
+}
 
 h1 {
 text-align: center;
@@ -44,6 +47,7 @@ li a:hover {
   grid-template-columns: auto auto auto ;
   padding:10px ;
   column-gap: 50px;
+  grid-row-gap: 100px;
   margin: 20px;
 }
 
