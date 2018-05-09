@@ -26,154 +26,135 @@
 //random number for pike//
 //random customers per hours
 //final = cookies per hour
-var numbersGenerator;
 
-function stnumbersGenerator1(min, max) {
-    var result = Math.floor(Math.random() * (max - min) + 1) + min;
-    var aveCookies = 1.2;
-    var final = Math.floor(result * aveCookies);
-    console.log(final);
-    document.getElementById('st1').innerHTML = '6AM: ' + final;
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+
+var pikePlace = {
+    name: 'Pike Place Market',
+    minCustomersPerHour: 23,
+    maxCustomersPerHour: 65,
+    avgCookiesPerCustomer: 6.3,
+    customersEachHour: [],
+    cookiesSoldEachHour: [],
+    totalDailyCookieSales: 0
+}
+//////////table go in here///////////////////////////////
+
+var allLocations = [];
+var cookiesTable = document.getElementById('piketable');
+
+function Locationinfo(location, hours, locationTotal) {
+    this.location = location;
+    this.hours = hours;
+    this.locationTotal = locationTotal;
+    allLocations.push(this);
 
 }
 
-function stnumbersGenerator2(min, max) {
-    var result = Math.floor(Math.random() * (max - min) + 1) + min;
-    var aveCookies = 1.2;
-    var final = Math.floor(result * aveCookies);
-    console.log(final);
-    document.getElementById('st2').innerHTML = '7AM: ' + final;
+// new Locationinfo('Pike', hours, '100', );
+// new Locationinfo('pike', '200', '300');
+Locationinfo.prototype.render = function () {
 
-}
+    var trEl = document.createElement('tr');
+    var tdEl = document.createElement('td');
+    //locations
+    tdEl.textContent = this.name;
+    trEl.appendChild(tdEl);
 
-function stnumbersGenerator3(min, max) {
-    var result = Math.floor(Math.random() * (max - min) + 1) + min;
-    var aveCookies = 1.2;
-    var final = Math.floor(result * aveCookies);
-    console.log(final);
-    document.getElementById('st3').innerHTML = '8AM: ' + final;
+    //hours
 
-}
+    tdEl = document.createElement('td');
+    tdEl.textContent = this.hours;
+    trEl.appendChild(tdEl);
+    //dailysales
 
-function stnumbersGenerator4(min, max) {
-    var result = Math.floor(Math.random() * (max - min) + 1) + min;
-    var aveCookies = 1.2;
-    var final = Math.floor(result * aveCookies);
-    console.log(final);
-    document.getElementById('st4').innerHTML = '9AM: ' + final;
+    tdEl = document.createElement('td');
+    tdEl.textContent = this.locationTotal;
+    trEl.appendChild(tdEl);
 
-}
+    cookiesTable.appendChild(trEl);
 
-function stnumbersGenerator5(min, max) {
-    var result = Math.floor(Math.random() * (max - min) + 1) + min;
-    var aveCookies = 1.2;
-    var final = Math.floor(result * aveCookies);
-    console.log(final);
-    document.getElementById('st5').innerHTML = '10AM: ' + final;
-
-}
-function stnumbersGenerator6(min, max) {
-    var result = Math.floor(Math.random() * (max - min) + 1) + min;
-    var aveCookies = 1.2;
-    var final = Math.floor(result * aveCookies);
-    console.log(final);
-    document.getElementById('st6').innerHTML = '11AM: ' + final;
-
-}
-function stnumbersGenerator7(min, max) {
-    var result = Math.floor(Math.random() * (max - min) + 1) + min;
-    var aveCookies = 1.2;
-    var final = Math.floor(result * aveCookies);
-    console.log(final);
-    document.getElementById('st7').innerHTML = '12AM: ' + final;
-
-}
-function stnumbersGenerator8(min, max) {
-    var result = Math.floor(Math.random() * (max - min) + 1) + min;
-    var aveCookies = 1.2;
-    var final = Math.floor(result * aveCookies);
-    console.log(final);
-    document.getElementById('st8').innerHTML = '1PM: ' + final;
-
-}
-function stnumbersGenerator9(min, max) {
-    var result = Math.floor(Math.random() * (max - min) + 1) + min;
-    var aveCookies = 1.2;
-    var final = Math.floor(result * aveCookies);
-    console.log(final);
-    document.getElementById('st9').innerHTML = '2PM: ' + final;
-
-}
-function stnumbersGenerator10(min, max) {
-    var result = Math.floor(Math.random() * (max - min) + 1) + min;
-    var aveCookies = 1.2;
-    var final = Math.floor(result * aveCookies);
-    console.log(final);
-    document.getElementById('st10').innerHTML = '3PM: ' + final;
-
-}
-function stnumbersGenerator11(min, max) {
-    var result = Math.floor(Math.random() * (max - min) + 1) + min;
-    var aveCookies = 1.2;
-    var final = Math.floor(result * aveCookies);
-    console.log(final);
-    document.getElementById('st11').innerHTML = '4PM: ' + final;
-
-}
-function stnumbersGenerator12(min, max) {
-    var result = Math.floor(Math.random() * (max - min) + 1) + min;
-    var aveCookies = 1.2;
-    var final = Math.floor(result * aveCookies);
-    console.log(final);
-    document.getElementById('st12').innerHTML = '5PM: ' + final;
-
-}
-function stnumbersGenerator13(min, max) {
-    var result = Math.floor(Math.random() * (max - min) + 1) + min;
-    var aveCookies = 1.2;
-    var final = Math.floor(result * aveCookies);
-    console.log(final);
-    document.getElementById('st13').innerHTML = '6PM: ' + final;
-
-}
-function stnumbersGenerator14(min, max) {
-    var result = Math.floor(Math.random() * (max - min) + 1) + min;
-    var aveCookies = 1.2;
-    var final = Math.floor(result * aveCookies);
-    console.log(final);
-    document.getElementById('st14').innerHTML = '7PM: ' + final;
-
-}
-function stnumbersGenerator15(min, max) {
-    var result = Math.floor(Math.random() * (max - min) + 1) + min;
-    var aveCookies = 1.2;
-    var final = Math.floor(result * aveCookies);
-    console.log(final);
-    document.getElementById('st15').innerHTML = '8PM: ' + final;
 
 }
 
 
 
-stnumbersGenerator1(3, 24);
-stnumbersGenerator2(3, 24);
-stnumbersGenerator3(3, 24);
-stnumbersGenerator4(3, 24);
-stnumbersGenerator5(3, 24);
-stnumbersGenerator6(3, 24);
-stnumbersGenerator7(3, 24);
-stnumbersGenerator8(3, 24);
-stnumbersGenerator9(3, 24);
-stnumbersGenerator10(3, 24);
-stnumbersGenerator11(3, 24);
-stnumbersGenerator12(3, 24);
-stnumbersGenerator13(3, 24);
-stnumbersGenerator14(3, 24);
-stnumbersGenerator15(3, 24);
+///////////////
+
+console.table(allLocations);
+
+//make header row
+
+function makeHeaderRow() {
+
+    var trEl = document.createElement('tr');
+    var thEl = document.createElement('th');
+    thEl.textContent = 'location';
+    trEl.appendChild(thEl);
+
+
+    var thEl = document.createElement('th');
+    thEl.textContent = 'hours';
+    trEl.appendChild(thEl);
+
+
+    var thEl = document.createElement('th');
+    thEl.textContent = 'locationTotal';
+    trEl.appendChild(thEl);
+
+    cookiesTable.appendChild(trEl);
+
+}
 
 
 
 
+
+
+
+
+/////////table go in here ///////////////////////////////////
+
+
+pikePlace.calcCustomersEachHour = function () {
+    for (var i = 0; i < hours.length; i++) {
+        //calc a random number between min/max and put it into the array
+        this.customersEachHour.push(random(this.minCustomersPerHour, this.maxCustomersPerHour));
+    }
+}
+
+pikePlace.calcCookiesSoldEachHour = function () {
+    pikePlace.calcCustomersEachHour();
+    // multiply our random customers by the average cookies per
+    for (var i = 0; i < hours.length; i++) {
+        this.cookiesSoldEachHour.push(Math.ceil(this.customersEachHour[i] * this.avgCookiesPerCustomer));
+        this.totalDailyCookieSales = this.totalDailyCookieSales + this.cookiesSoldEachHour[i];
+        // console.log(this.totalDailyCookieSales);
+    }
+}
+
+pikePlace.render = function () {
+    pikePlace.calcCookiesSoldEachHour();
+    // grab the parent from the DOM
+    var tbEl = document.getElementById('piketable')
+    for (var i = 0; i < hours.length; i++) {
+        // create an element
+        var tdEl = document.createElement('td');
+        // give the element content
+        tdEl.textContent = hours[i] + ': ' + this.cookiesSoldEachHour[i] + ' cookies'
+        // append the child to the parent
+        tbEl.appendChild(tdEl);
+    }
+    tdEl = document.createElement('td');
+    tdEl.textContent = 'Total: ' + this.totalDailyCookieSales + ' cookies';
+    tbEl.appendChild(tdEl);
+}
+
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min; // via MDN
+}
+
+// pikePlace.render();
 // var ul = document.createElement('list');
 // document.body.appendChild(ul);
 
@@ -190,3 +171,16 @@ stnumbersGenerator15(3, 24);
 // document.getElementById("myList").appendChild(node);
 
 // }
+function renderAlllocations() {
+    for (var i in allLocations) {
+        allLocations[i].render();
+
+    }
+
+}
+
+makeHeaderRow();
+renderAlllocations();
+
+
+pikePlace.render();

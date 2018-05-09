@@ -65,7 +65,7 @@ Locationinfo.prototype.render = function () {
 
     tdEl = document.createElement('td');
     tdEl.textContent = this.hours;
-    trEl.appendChild(tdEl); 
+    trEl.appendChild(tdEl);
     //dailysales
 
     tdEl = document.createElement('td');
@@ -136,18 +136,18 @@ pikePlace.calcCookiesSoldEachHour = function () {
 pikePlace.render = function () {
     pikePlace.calcCookiesSoldEachHour();
     // grab the parent from the DOM
-    var ulEl = document.getElementById('piketable')
+    var tbEl = document.getElementById('piketable')
     for (var i = 0; i < hours.length; i++) {
         // create an element
-        var liEl = document.createElement('td');
+        var tdEl = document.createElement('td');
         // give the element content
-        liEl.textContent = hours[i] + ': ' + this.cookiesSoldEachHour[i] + ' cookies'
+        tdEl.textContent = hours[i] + ': ' + this.cookiesSoldEachHour[i] + ' cookies'
         // append the child to the parent
-        ulEl.appendChild(liEl);
+        tbEl.appendChild(tdEl);
     }
-    liEl = document.createElement('td');
-    liEl.textContent = 'Total: ' + this.totalDailyCookieSales + ' cookies';
-    ulEl.appendChild(liEl);
+    tdEl = document.createElement('td');
+    tdEl.textContent = 'Total: ' + this.totalDailyCookieSales + ' cookies';
+    tbEl.appendChild(tdEl);
 }
 
 function random(min, max) {
