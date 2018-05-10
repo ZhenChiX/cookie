@@ -4,14 +4,13 @@ font-family: 'Parisienne', cursive; */
 /* font-family: 'Archivo Black', sans-serif; */
 /* font-family: 'Bangers', cursive; */
 
-* {
-  cursor:url(img/salmon.png), cell ;
-}
 
-p {
+
+
+ p {
 text-align: left;
 
-}
+} 
 
 h1 {
 text-align: center;
@@ -76,8 +75,10 @@ transform: scale(1.5);
   }
   
   table {
+      
       border:1px solid black;
       font-family: 'Bangers', sans-serif;
+      text-align: center;
   }
   
   td {
@@ -91,3 +92,32 @@ transform: scale(1.5);
       background-color: navy;
       color: white;
   }
+
+
+  *{
+    cursor: url("../img/salmons.png"),auto;
+  }
+  
+/* //SALES PAGE// */
+fieldset {
+  width: 30vw;
+  text-align: right;
+}
+
+input {
+    
+  padding: 2px;
+  margin: 2px;
+}
+
+label{
+  align-content: left;
+}
+
+button {
+  text-align: center;
+  font-size: 1.2vw;
+  padding: 2px;
+  margin:3px;
+  width: 14vw;
+}
