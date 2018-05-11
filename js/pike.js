@@ -166,17 +166,11 @@ var eld = document.getElementById('LocationName');
 
 
 
-
-
 renderAlllocations();
 // makeHeaderRow();
 
 
-function random(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+
 //via MDN
 
 
@@ -189,3 +183,11 @@ inputData.addEventListener('sumbit', function () {
     var inputFile = new Locationinfo(ela, elb, elc, eld);
     renderAlllocations();
 });
+
+///////////////////MATH RANDOM///////////////
+
+function random(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}

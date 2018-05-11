@@ -30,14 +30,14 @@
 //     allLocations.push(this);
 // }
 
-Locationinfo.prototype.formData = function () {
+// Locationinfo.prototype.formData = function () {
 
 
 
-}
-var formData = function () {
+// }
+// var formData = function () {
 
-}
+// }
 
 // var pike = new Locationinfo(6.3, 23, 65, 'Pike Place');
 // var seaTac = new Locationinfo(1.2, 3, 24, 'SeaTac Airport');
