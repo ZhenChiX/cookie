@@ -4,7 +4,20 @@ font-family: 'Parisienne', cursive; */
 /* font-family: 'Archivo Black', sans-serif; */
 /* font-family: 'Bangers', cursive; */
 
+/* HOME PAGE */
+.event{
+overflow: auto;
+width: 60%;
+height: 150px;
+}
 
+#salmon{
+  float: right;
+  /* max-width:400px; */
+  max-width: 30vw;
+  margin: 20px;
+
+}
 
 
  p {
@@ -22,14 +35,20 @@ font-size: 4vw;
   box-sizing: border-box;
   
 }
-ul {
+
+
+
+
+ul>li {
+   display: inline-block; 
    list-style-type: none;
    overflow: hidden;
+  
   }
 
 li a {
 
-  display: block;
+  display:block;
   color: white;
   text-align: center;
   padding: 14px 16px;
@@ -54,8 +73,8 @@ li a:hover {
 
 .item {
   text-align: center;
-  height:250px;
-  width: 250px;
+  height:200px;
+  width: 200px;
   box-shadow: 4px 7px 65px 17px black;
   }
 
@@ -89,7 +108,7 @@ transform: scale(1.5);
   }
   
   th {
-      background-color: navy;
+      background-color:gray;
       color: white;
   }
 
@@ -99,8 +118,12 @@ transform: scale(1.5);
   }
   
 /* //SALES PAGE// */
+label{
+  align-content: left;
+}
+
 fieldset {
-  width: 30vw;
+  width: 38vw;
   text-align: right;
 }
 
@@ -110,14 +133,10 @@ input {
   margin: 2px;
 }
 
-label{
-  align-content: left;
-}
-
 button {
   text-align: center;
   font-size: 1.2vw;
   padding: 2px;
   margin:3px;
-  width: 14vw;
+  width: 13vw;
 }

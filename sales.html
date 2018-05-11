@@ -16,34 +16,39 @@
 
     <h1>COOKIE SALES</h1>
     <div class="menu">
-        <ul>
+        <ul id="nav">
             <li>
                 <a href="index.html">HOME PAGE</a>
             </li>
-            <LI>
+            <li>
                 <a href="sales.html">CONFIDENTIAL</a>
-            </LI>
+            </li>
+            <li>
+                <a href="store.html">MERCHANDISE</a>
+            </li>
         </ul>
     </div>
     <hr>
+    <hr>
     <h2>CONFIDENTIAL:</h2>
     <form id="input-data">
+        <!-- /  event.target.who.value = null;/// -->
         <fieldset>
             <legend>Encrypt DATA</legend>
             <label>AvgPerCustomer</label>
-            <input type="text" />
+            <input id="AvgPerCustomer" type="text" />
             <br>
             <label>MinCustPerHour</label>
-            <input type="text" />
+            <input id="MinCustPerHour" type="text" />
             <br>
-            <label>MaxCusPerHour</label>
-            <input type="text" />
+            <label>MaxCustPerHour</label>
+            <input id="MaxCustPerHour" type="text" />
             <br>
             <label>Location Name</label>
-            <input type="text" />
+            <input id="LocationName" type="text" />
             <br>
-            <button type="submit" >Input New Data</button>
-            <button type="sumbit">Reset Data</button>
+            <button type="submit">Input New Data</button>
+            <button type="sumbit" id="reset">Reset Data</button>
         </fieldset>
     </form>
     <table id="piketable"></table>
@@ -65,6 +70,7 @@
 
 
 <script type="text/javascript" src="js/pike.js"></script>
+<!-- <script type="text/javascript" src="js/events.js"></script> -->
 <!-- <script type="text/javascript" src="js/seatac.js"></script>
 <script type="text/javascript" src="js/seacenter.js"></script>
 <script type="text/javascript" src="js/capital.js"></script>

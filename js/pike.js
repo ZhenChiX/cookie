@@ -34,6 +34,16 @@
 var allLocations = [];
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
+var tbEl = document.getElementById('piketable');
+
+////////////EVENTS JS //////////////////////////
+
+var inputData = document.getElementById('input-data');
+var reset = document.getElementById('reset');
+
+////////////////////////////////////////////////
+
+
 function Locationinfo(avgCookiesPerCustomer, minCustomersPerHour, maxCustomersPerHour, name) {
     this.avgCookiesPerCustomer = avgCookiesPerCustomer;
     this.minCustomersPerHour = minCustomersPerHour;
@@ -72,7 +82,7 @@ Locationinfo.prototype.calcCookiesSoldPerHour = function () {
 
         // this.cookiesSoldPerHour.push(Math.ceil(this.customersPerHour[i] * this.avgCookiesPerCustomer));
 
-       this.totalDailyCookieSales = this.totalDailyCookieSales + this.cookiesSoldPerHour[i];
+        this.totalDailyCookieSales = this.totalDailyCookieSales + this.cookiesSoldPerHour[i];
 
         // console.table(this.totalDailyCookieSales);
     }
@@ -82,9 +92,9 @@ Locationinfo.prototype.render = function () {
     this.calcCookiesSoldPerHour();
     // grab the parent from the DOM
 
-    var tbEl = document.getElementById('piketable');
+    // var tbEl = document.getElementById('piketable');
     var newTrEl = document.createElement('tr');
-    var newTdEl = document.createElement('td');
+    var newTdEl = document.createElement('th');
 
     newTdEl.textContent = this.name;
     newTrEl.append(newTdEl);
@@ -106,15 +116,15 @@ Locationinfo.prototype.render = function () {
 
 function renderAlllocations() {
 
-    var tbEl = document.getElementById('piketable');
+    // var tbEl = document.getElementById('piketable');
     var newTrEl = document.createElement('tr');
 
-    var locationTdEl = document.createElement('td');
+    var locationTdEl = document.createElement('th');
     locationTdEl.textContent = 'Store Location';
     newTrEl.append(locationTdEl);
 
     for (var i in hours) {
-        var newTdEl = document.createElement('td');
+        var newTdEl = document.createElement('th');
         newTdEl.textContent = hours[i];
 
         newTrEl.append(newTdEl);
@@ -142,6 +152,22 @@ var seaCenter = new Locationinfo(3.7, 11, 38, 'Seattle Center');
 var capitol = new Locationinfo(2.3, 20, 38, 'Capitol Hill');
 var alki = new Locationinfo(4.6, 2, 16, 'Alki');
 
+/////////////////////////////////////////////////
+
+
+// var a = 50;
+// var b = 20;
+// var c = 80;
+var ela = document.getElementById('AvgPerCustomer');
+var elb = document.getElementById('MinCustPerHour');
+var elc = document.getElementById('MaxCustPerHour');
+var eld = document.getElementById('LocationName');
+
+
+
+
+
+
 renderAlllocations();
 // makeHeaderRow();
 
@@ -151,6 +177,15 @@ function random(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-
 //via MDN
+
+
+//start sumbit event//
+inputData.addEventListener('sumbit', function () {
+
+    event.preventDefault();
+    //  event.target.who.value = null;//
+
+    var inputFile = new Locationinfo(ela, elb, elc, eld);
+    renderAlllocations();
+});
