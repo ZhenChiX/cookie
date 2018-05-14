@@ -1,0 +1,179 @@
+/* font-family: 'Permanent Marker', cursive;
+font-family: 'Freckle Face', cursive;
+font-family: 'Parisienne', cursive; */
+/* font-family: 'Archivo Black', sans-serif; */
+/* font-family: 'Bangers', cursive; */
+
+/* HOME PAGE */
+.event{
+overflow: auto;
+width: 60%;
+height: 150px;
+}
+body{
+max-width: 1300px;
+margin: 0px auto;
+
+}
+.pmain{
+width:80%;
+
+}
+
+#salmon{
+  float: right;
+  /* max-width: 250px; */
+  max-width: 25vw ;
+  margin: 20px;
+
+}
+
+
+ p {
+text-align: left;
+
+} 
+
+h1 {
+text-align: center;
+font-size: 4vw;
+}
+
+#menu {
+  
+  box-sizing: border-box;
+  
+}
+
+
+
+
+ul li {
+   display: inline-block; 
+   list-style-type: none;
+   overflow: hidden;
+  
+  }
+
+li a {
+
+  display:block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+
+  background-color:black;
+}
+
+#family{
+max-width:60%;
+border: 5px solid white;
+margin-left:5px auto;
+
+}
+/* /location grid/ */
+.container{
+  display: grid;
+  grid-template-columns: auto auto auto ;
+  padding:10px ;
+  column-gap: 50px;
+  grid-row-gap: 100px;
+  margin: 20px;
+}
+
+
+.item {
+  text-align: center;
+  height:200px;
+  width: 200px;
+  box-shadow: 4px 7px 65px 17px black;
+  }
+
+.item:hover{
+transform: scale(1.5);
+
+}
+
+* {
+    font-family: 'Archivo Black',cursive;
+  }
+
+
+
+  body {
+    background: #ccc;
+  }
+  
+  table {                 
+      
+      border:1px solid black;
+      font-family: 'Bangers', sans-serif;
+      text-align: center;
+  }
+  
+  td {
+      padding: 10px;
+      border-radius: 10px;
+    border: 1px solid black;
+    background: white;
+  }
+  
+  th {
+      background-color:gray;
+      color: white;
+  }
+
+
+  *{
+    cursor: url("../img/salmons.png"),auto;
+  }
+  
+/* //SALES PAGE// */
+label{
+  align-content: left;
+}
+
+fieldset {
+  width: 30vw;
+  text-align: right;
+}
+
+input {
+    
+  padding: 2px;
+  margin: 2px;
+}
+
+button {
+  text-align: center;
+  font-size: 1.2vw;
+  padding: 2px;
+  margin:3px;
+  width: 13vw;
+}
+
+/* /////////////////STORE PAGE///////////////////////// */
+
+#ad{
+position: fixed ;
+top : 15%;
+right:5%;
+border: 3px solid black;
+background-color:navy;
+color: white;
+
+}
+
+.goodies{
+  display: block;
+  max-width: 100%;
+  
+}
+#reset{
+float: none;
+  
+}
