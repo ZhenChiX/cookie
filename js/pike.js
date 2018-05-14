@@ -41,6 +41,9 @@ var tbEl = document.getElementById('piketable');
 var inputData = document.getElementById('input-data');
 var reset = document.getElementById('reset');
 
+
+
+
 ////////////////////////////////////////////////
 
 
@@ -115,7 +118,7 @@ Locationinfo.prototype.render = function () {
 
 
 function renderAlllocations() {
-
+    tbEl.innerHTML = '';
     // var tbEl = document.getElementById('piketable');
     var newTrEl = document.createElement('tr');
 
@@ -158,31 +161,53 @@ var alki = new Locationinfo(4.6, 2, 16, 'Alki');
 // var a = 50;
 // var b = 20;
 // var c = 80;
-var ela = document.getElementById('AvgPerCustomer');
-var elb = document.getElementById('MinCustPerHour');
-var elc = document.getElementById('MaxCustPerHour');
-var eld = document.getElementById('LocationName');
-
 
 
 
 renderAlllocations();
 // makeHeaderRow();
 
-
-
 //via MDN
 
 
 //start sumbit event//
-inputData.addEventListener('sumbit', function () {
-
+function newStoreSumbit(event) {
     event.preventDefault();
     //  event.target.who.value = null;//
 
-    var inputFile = new Locationinfo(ela, elb, elc, eld);
+    if (!event.target.locationName.value || !event.target.avgPerCustomer.value || !event.target.minCustPerHour.value || !event.target.maxCustPerHour.value) {
+        return alert('Please input value numbers');
+    }
+
+    var newAvg = event.target.avgPerCustomer.value;
+    var newMin = event.target.minCustPerHour.value;
+    var newMax = event.target.maxCustPerHour.value;
+    var newName = event.target.locationName.value;
+
+    event.target.avgPerCustomer.value = null;
+    event.target.minCustPerHour.value = null;
+    event.target.maxCustPerHour.value = null;
+    event.target.locationName.value = null;
+
+
+
+    var inputFile = new Locationinfo(newAvg, newMin, newMax, newName);
+
     renderAlllocations();
-});
+}
+
+function reFreash(){
+    location.reload();
+}
+
+inputData.addEventListener('submit', newStoreSumbit);
+reset.addEventListener('click', reFreash);
+
+
+console.table(allLocations);
+
+
+
 
 ///////////////////MATH RANDOM///////////////
 
@@ -190,4 +215,4 @@ function random(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+};
